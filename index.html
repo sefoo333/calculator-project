@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .themes,
+        .storage {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            font-size: 30px;
+            color: white;
+            background-color: black;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .storage {
+            bottom: 115px;
+        }
+
+        .dark {
+            background-color: #061122 !important;
+            color: white !important;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        .darkk {
+            background-color: #020409;
+        }
+
+        .window {
+            width: 200px;
+            height: 250px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            overflow-y: scroll;
+        }
+
+        .window::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .window::-webkit-scrollbar-track {
+            background-color: black;
+        }
+
+        .window::-webkit-scrollbar-thumb {
+            background-color: white;
+        }
+
+        .both {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cancel,
+        .clear {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .w {
+            border-bottom: 1px solid white;
+            margin-bottom: 20px;
+        }
+
+        .w h3 {
+            color: white;
+        }
+
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="themes">
+        <ion-icon name="moon"></ion-icon>
+    </div>
+    <div class="storage">
+        <ion-icon name="cloud"></ion-icon>
+    </div>
+
+
+    <script>
+        let the = document.querySelector(".themes")
+
+        the.addEventListener("click", () => {
+            document.querySelectorAll(".black").forEach((a) => a.classList.toggle("dark"))
+            document.querySelector(".parent").classList.toggle("darkk")
+            result.classList.toggle("dark")
+
+        })
+
+
+    </script>
+
+
+    <div class="window hide">
+        <div class="both">
+            <div class="cancel"><ion-icon name="close-circle"></ion-icon></div>
+            <div class="clear"><ion-icon name="trash-outline"></ion-icon></div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="parent">
+        <input type="text" class="result" placeholder="0" readonly>
+        <div class="buttons">
+            <div class="item linear" id="num" data-value="*">x</div>
+            <div class="item linear" id="num" data-value="%">%</div>
+            <div class="item ac" id="ans">Ans</div>
+            <div class="item ac" id="clear" onclick="result.value = '' , output = ''">C</div>
+            <div class="item linear" id="num" data-value="-">-</div>
+            <div class="item black" id="num" data-value="9">9</div>
+            <div class="item black" id="num" data-value="8">8</div>
+            <div class="item black" id="num" data-value="7">7</div>
+            <div class="item linear" id="num" data-value="+">+</div>
+            <div class="item black" id="num" data-value="6">6</div>
+            <div class="item black" id="num" data-value="5">5</div>
+            <div class="item black" id="num" data-value="4">4</div>
+            <div class="item linear" id="num" data-value="/">/</div>
+            <div class="item black" id="num" data-value="3">3</div>
+            <div class="item black" id="num" data-value="2">2</div>
+            <div class="item black" id="num" data-value="1">1</div>
+            <div class="item res" id="equal">=</div>
+            <div class="item black" id="delete"><ion-icon name="close-circle-outline"></ion-icon></div>
+            <div class="item black" id="num" data-value=".">.</div>
+            <div class="item black" id="num" data-value="0">0</div>
+
+        </div>
+    </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="main.js">
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body {
+    @include center();
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: linear-gradient(318deg, #1f9f84, #22cb9a);
+    font-family: system-ui;
+}
+
+
+.parent {
+    overflow: hidden;
+
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+
+    .result {
+        height: 150px;
+        background-color: #f9f9f9;
+        color: black;
+        font-size: 22px;
+        /* width: 285px; */
+        border: none;
+        outline: none;
+        margin-bottom: 20px;
+        border-radius: 15px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 273px;
+
+
+
+        .item {
+            background-color: blue;
+            color: white;
+            font-size: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+
+        }
+    }
+}
+
+.black {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: 1px 3px 4px 1px #e1e1e1;
+}
+
+.linear {
+    background-image: linear-gradient(318deg, #1f9f84, #22cb9a);
+}
+
+.ac {
+    background-image: linear-gradient(321deg, #fea849, #f5ce74);
+}
+
+.res {
+    background-image: linear-gradient(318deg, #29b2db, #50dcd6);
+}
